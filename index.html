@@ -378,7 +378,7 @@
     <li><a href="#" onclick="showSection('home')" id="nav-home" class="active">Home</a></li>
     <li><a href="#" onclick="showSection('about')" id="nav-about">About</a></li>
     <li><a href="#" onclick="showSection('experience')" id="nav-experience">Experience</a></li>
-    <li><a href="#" onclick="showSection('projects')" id="nav-projects">Projects</a></li>
+    <li><a href="#" onclick="showSection('resume')" id="nav-resume">Resume</a></li>
     <li><a href="#" onclick="showSection('contact')" id="nav-contact">Contact</a></li>
   </ul>
 </nav>
@@ -387,28 +387,16 @@
 <section id="home" class="active">
   <p class="home-tag">Data & Policy Analyst · Washington, DC</p>
   <h1>Yosup<br><em>Shin</em></h1>
-  <p class="home-desc">
-    I work at the intersection of data, policy, and international development. 
-    Two years coordinating research programs across Kenya, the DRC, and Washington — 
-    turning messy data into decisions that matter.
-  </p>
+  <div class="home-desc">
+    <p style="margin-bottom:1rem;">I'm a Korean national based in Washington, DC, with a background that sits at the intersection of international relations, international development, data and policy.</p>
+    <p style="margin-bottom:1rem;">I'd consider myself a data-driven policy and program analyst with hands-on experience managing research programs, coordinating multi-stakeholder projects, and translating complex data into decisions that matter.</p>
+    <p style="margin-bottom:1rem;">I get genuinely curious about why things work the way they do — whether that's why smallholder farmers don't adopt cleaner technology even when the economics make sense, or why humanitarian funding doesn't always reach the communities that need it most. That curiosity is what pushed me toward quantitative research, and it's what keeps me looking for roles where data and policy actually connect.</p>
+    <p style="margin-bottom:1rem;">My technical toolkit includes Stata, R, Python, SurveyCTO, and Git. I work at the intersection of data analysis, program management, and policy, and I'm drawn to roles where rigorous evidence directly shapes decisions — whether in research institutions, international organizations, or impact-driven private sector teams.</p>
+    <p>Open to opportunities in Washington DC and internationally. Happy to connect and chat!</p>
+  </div>
   <div class="home-links">
     <button class="btn btn-primary" onclick="showSection('experience')">View Experience →</button>
-    <button class="btn btn-secondary" onclick="showSection('contact')">Get in touch</button>
-  </div>
-  <div class="home-stats">
-    <div>
-      <div class="stat-num">8,200+</div>
-      <div class="stat-label">Households surveyed, DRC</div>
-    </div>
-    <div>
-      <div class="stat-num">10,000+</div>
-      <div class="stat-label">RCT subjects, Kenya</div>
-    </div>
-    <div>
-      <div class="stat-num">30+</div>
-      <div class="stat-label">Countries, World Bank</div>
-    </div>
+    <a class="btn btn-secondary" href="mailto:shinys9317@gmail.com">shinys9317@gmail.com</a>
   </div>
 </section>
 
@@ -574,49 +562,25 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <a class="project-card" href="https://github.com/sys9317/dc-capital-flows-analysis" target="_blank">
-      <div class="project-icon">📊</div>
-      <div class="project-title">DC Region Capital Flows Analysis</div>
-      <div class="project-desc">
-        Exploratory analysis of capital investment, poverty rates, and racial demographics 
-        across DC-area counties using R, tidyverse, and ggplot2.
-      </div>
-      <span class="project-link">View on GitHub →</span>
-    </a>
-
-    <div class="project-card">
-      <div class="project-icon">⚡</div>
-      <div class="project-title">EV Adoption RCT — Kenya</div>
-      <div class="project-desc">
-        Three-arm randomized controlled trial evaluating demand-side barriers to electric 
-        two-wheeler adoption among 1,000+ boda-boda drivers across 8 provinces.
-      </div>
-      <span class="project-link" style="color:var(--muted)">OYE Kenya · 2025</span>
-    </div>
-
-    <div class="project-card">
-      <div class="project-icon">🌍</div>
-      <div class="project-title">DRC Humanitarian Needs Assessment</div>
-      <div class="project-desc">
-        Multi-sector needs assessment pipeline covering 8,200+ households in eastern DRC. 
-        Stata-based analysis informing humanitarian cluster funding decisions.
-      </div>
-      <span class="project-link" style="color:var(--muted)">IMPACT Initiatives · 2025–2026</span>
-    </div>
-
-    <a class="project-card" href="https://github.com/sys9317" target="_blank">
-      <div class="project-icon">🤖</div>
-      <div class="project-title">World Bank AI Knowledge Tool</div>
-      <div class="project-desc">
-        Internal AI-powered knowledge retrieval system built for the B-READY team to 
-        reduce duplicated research effort across analysts.
-      </div>
-      <span class="project-link">View GitHub →</span>
-    </a>
+<!-- RESUME -->
+<section id="resume">
+  <h2>Resume</h2>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+    <p style="color:var(--muted); font-size:0.9rem;">Full resume below.</p>
+    <a class="btn btn-primary" href="resume.pdf" download="Yosup_Shin_Resume.pdf">Download PDF →</a>
+  </div>
+  <div style="border:1px solid var(--line); border-radius:4px; overflow:hidden;">
+    <iframe
+      src="resume.pdf"
+      width="100%"
+      height="900px"
+      style="display:block; border:none;"
+      title="Yosup Shin Resume">
+      <p style="padding:2rem; color:var(--muted);">
+        Your browser doesn't support PDF preview.
+        <a href="resume.pdf" download style="color:var(--hover);">Download the resume here.</a>
+      </p>
+    </iframe>
   </div>
 </section>
 
@@ -654,7 +618,7 @@
     document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    document.getElementById('nav-' + id).classList.add('active');
+    if(document.getElementById('nav-' + id)) document.getElementById('nav-' + id).classList.add('active');
     window.scrollTo(0, 0);
   }
 </script>
