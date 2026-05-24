@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yosup Shin</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F5F2;
+    --text: #1A1A1A;
+    --muted: #6B6B6B;
+    --accent: #1A1A1A;
+    --line: #E0DDD8;
+    --hover: #2563EB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 4rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--text); font-weight: 500; }
+
+  /* SECTIONS */
+  section {
+    display: none;
+    min-height: 100vh;
+    padding: 8rem 4rem 4rem;
+    max-width: 860px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease;
+  }
+
+  section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* HOME */
+  .home-tag {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.8rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .home-desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+
+  .home-links {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .btn-primary:hover { background: var(--hover); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+
+  .btn-secondary:hover { border-color: var(--text); }
+
+  .home-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  /* ABOUT */
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .about-details { }
+
+  .detail-block {
+    margin-bottom: 2rem;
+  }
+
+  .detail-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-value {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0.2rem 0.2rem 0.2rem 0;
+  }
+
+  /* EXPERIENCE */
+  .exp-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+  }
+
+  .exp-item:first-child { border-top: 1px solid var(--line); }
+
+  .exp-meta {
+    padding-top: 0.15rem;
+  }
+
+  .exp-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .exp-org {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  .exp-title {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .exp-tags {
+    margin-top: 0.8rem;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.8rem;
+    transition: border-color 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .project-card:hover { border-color: var(--text); }
+
+  .project-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--hover);
+    text-decoration: none;
+  }
+
+  /* CONTACT */
+  .contact-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact-row:first-child { border-top: 1px solid var(--line); }
+
+  .contact-type {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .contact-val {
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-val:hover { color: var(--hover); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    section { padding: 6rem 1.5rem 3rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .home-stats { gap: 2rem; flex-wrap: wrap; }
+    .nav-links { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#" onclick="showSection('home')">Yosup Shin</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showSection('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showSection('about')" id="nav-about">About</a></li>
+    <li><a href="#" onclick="showSection('experience')" id="nav-experience">Experience</a></li>
+    <li><a href="#" onclick="showSection('projects')" id="nav-projects">Projects</a></li>
+    <li><a href="#" onclick="showSection('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <p class="home-tag">Data & Policy Analyst · Washington, DC</p>
+  <h1>Yosup<br><em>Shin</em></h1>
+  <p class="home-desc">
+    I work at the intersection of data, policy, and international development. 
+    Two years coordinating research programs across Kenya, the DRC, and Washington — 
+    turning messy data into decisions that matter.
+  </p>
+  <div class="home-links">
+    <button class="btn btn-primary" onclick="showSection('experience')">View Experience →</button>
+    <button class="btn btn-secondary" onclick="showSection('contact')">Get in touch</button>
+  </div>
+  <div class="home-stats">
+    <div>
+      <div class="stat-num">8,200+</div>
+      <div class="stat-label">Households surveyed, DRC</div>
+    </div>
+    <div>
+      <div class="stat-num">10,000+</div>
+      <div class="stat-label">RCT subjects, Kenya</div>
+    </div>
+    <div>
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Countries, World Bank</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm a Korean national based in Washington, DC, finishing my Master's in 
+        International Development Policy at Georgetown McCourt. Before that, 
+        I studied International Relations at Leiden University in the Netherlands, 
+        where I also grew up partly in Belgium.
+      </p>
+      <p>
+        I get genuinely curious about why things work the way they do — why 
+        smallholder farmers don't adopt cleaner technology even when the economics 
+        make sense, or why humanitarian funding doesn't always reach the communities 
+        that need it most. That curiosity is what drew me to quantitative research, 
+        and what keeps me looking for roles where data and decisions actually connect.
+      </p>
+      <p>
+        Outside of work, I follow developments in AI policy, global food security, 
+        and U.S.-Asia economic relations closely.
+      </p>
+    </div>
+    <div class="about-details">
+      <div class="detail-block">
+        <div class="detail-label">Education</div>
+        <div class="detail-value">
+          Georgetown University, McCourt<br>
+          <span style="color:var(--muted); font-size:0.85rem">MA International Development Policy, 2026</span><br><br>
+          Leiden University<br>
+          <span style="color:var(--muted); font-size:0.85rem">BSc International Relations (Honors), 2024</span>
+        </div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-label">Languages</div>
+        <div class="detail-value">Korean (native) · English (fluent) · French (elementary)</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-label">Technical Skills</div>
+        <div>
+          <span class="tag">Stata</span>
+          <span class="tag">R</span>
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">SurveyCTO</span>
+          <span class="tag">Git</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Power BI</span>
+        </div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-label">Methods</div>
+        <div>
+          <span class="tag">RCT</span>
+          <span class="tag">Impact Evaluation</span>
+          <span class="tag">M&E</span>
+          <span class="tag">Panel Data</span>
+          <span class="tag">Causal Inference</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-date">Sep 2025 – May 2026</div>
+      <div class="exp-org">Washington, DC</div>
+    </div>
+    <div>
+      <div class="exp-title">Graduate Capstone Consultant — IMPACT Initiatives (REACH)</div>
+      <div class="exp-desc">
+        Managed the end-to-end analytical pipeline for the Multi-Sector Needs Assessment 
+        in eastern DRC, analyzing panel data from 8,200+ household surveys and 200+ indicators 
+        in Stata. Produced factsheets used by humanitarian clusters to allocate funding across 
+        two conflict-affected provinces.
+      </div>
+      <div class="exp-tags">
+        <span class="tag">Stata</span><span class="tag">Panel Data</span><span class="tag">M&E</span><span class="tag">French</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-date">Sep 2025 – May 2026</div>
+      <div class="exp-org">Washington, DC</div>
+    </div>
+    <div>
+      <div class="exp-title">Short Term Consultant — The World Bank</div>
+      <div class="exp-desc">
+        Coordinated across economists, country office staff, and external vendors for the 
+        B-READY flagship report. Built an internal AI knowledge retrieval system that 
+        streamlined research workflows. Administered stakeholder databases across 30+ 
+        countries for the B-READY and Building Green projects.
+      </div>
+      <div class="exp-tags">
+        <span class="tag">Program Coordination</span><span class="tag">AI Tools</span><span class="tag">CRM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-date">May 2025 – Sep 2025</div>
+      <div class="exp-org">Nairobi, Kenya</div>
+    </div>
+    <div>
+      <div class="exp-title">Research Assistant — OYE Kenya</div>
+      <div class="exp-desc">
+        Coordinated a three-arm RCT evaluating demand-side barriers to electric two-wheeler 
+        adoption among 1,000+ motorcycle taxi drivers across 8 Kenyan provinces. Managed 
+        GPS tracking pipelines, three-wave survey data, and high-frequency quality checks. 
+        Results informed private sector investment decisions in Kenya's energy transition.
+      </div>
+      <div class="exp-tags">
+        <span class="tag">RCT</span><span class="tag">Stata</span><span class="tag">Energy Transition</span><span class="tag">East Africa</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-date">Dec 2023 – May 2024</div>
+      <div class="exp-org">The Hague, Netherlands</div>
+    </div>
+    <div>
+      <div class="exp-title">Research Assistant — Leiden University</div>
+      <div class="exp-desc">
+        Conducted historical and geopolitical research on the Korean DMZ to support academic 
+        publication. Translated primary sources Korean → English and facilitated bi-weekly 
+        research seminars.
+      </div>
+      <div class="exp-tags">
+        <span class="tag">Qualitative Research</span><span class="tag">Korean</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-date">Jun 2023 – Jun 2024</div>
+      <div class="exp-org">The Hague, Netherlands</div>
+    </div>
+    <div>
+      <div class="exp-title">Treasurer — Leiden Model United Nations Foundation</div>
+      <div class="exp-desc">
+        Managed a EUR 45,000 budget for international delegations. Achieved a 20% reduction 
+        in delegation fees through negotiation. Coordinated travel and logistics across 
+        multiple countries.
+      </div>
+      <div class="exp-tags">
+        <span class="tag">Budget Management</span><span class="tag">Event Coordination</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <a class="project-card" href="https://github.com/sys9317/dc-capital-flows-analysis" target="_blank">
+      <div class="project-icon">📊</div>
+      <div class="project-title">DC Region Capital Flows Analysis</div>
+      <div class="project-desc">
+        Exploratory analysis of capital investment, poverty rates, and racial demographics 
+        across DC-area counties using R, tidyverse, and ggplot2.
+      </div>
+      <span class="project-link">View on GitHub →</span>
+    </a>
+
+    <div class="project-card">
+      <div class="project-icon">⚡</div>
+      <div class="project-title">EV Adoption RCT — Kenya</div>
+      <div class="project-desc">
+        Three-arm randomized controlled trial evaluating demand-side barriers to electric 
+        two-wheeler adoption among 1,000+ boda-boda drivers across 8 provinces.
+      </div>
+      <span class="project-link" style="color:var(--muted)">OYE Kenya · 2025</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🌍</div>
+      <div class="project-title">DRC Humanitarian Needs Assessment</div>
+      <div class="project-desc">
+        Multi-sector needs assessment pipeline covering 8,200+ households in eastern DRC. 
+        Stata-based analysis informing humanitarian cluster funding decisions.
+      </div>
+      <span class="project-link" style="color:var(--muted)">IMPACT Initiatives · 2025–2026</span>
+    </div>
+
+    <a class="project-card" href="https://github.com/sys9317" target="_blank">
+      <div class="project-icon">🤖</div>
+      <div class="project-title">World Bank AI Knowledge Tool</div>
+      <div class="project-desc">
+        Internal AI-powered knowledge retrieval system built for the B-READY team to 
+        reduce duplicated research effort across analysts.
+      </div>
+      <span class="project-link">View GitHub →</span>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="contact-intro">
+    Open to roles in research, program management, and policy — in Washington DC 
+    and internationally. Feel free to reach out.
+  </p>
+  <div class="contact-links">
+    <div class="contact-row">
+      <span class="contact-type">Email</span>
+      <a class="contact-val" href="mailto:shinys9317@gmail.com">shinys9317@gmail.com</a>
+    </div>
+    <div class="contact-row">
+      <span class="contact-type">LinkedIn</span>
+      <a class="contact-val" href="https://linkedin.com/in/yosupshin0426" target="_blank">yosupshin0426</a>
+    </div>
+    <div class="contact-row">
+      <span class="contact-type">GitHub</span>
+      <a class="contact-val" href="https://github.com/sys9317" target="_blank">sys9317</a>
+    </div>
+    <div class="contact-row">
+      <span class="contact-type">Location</span>
+      <span class="contact-val">Washington, DC</span>
+    </div>
+  </div>
+</section>
+
+<div class="footer">© 2026 Yosup Shin</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.getElementById('nav-' + id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
