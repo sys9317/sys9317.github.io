@@ -152,18 +152,19 @@
 
 <section id="projects" class="wrap">
   <div class="section-head reveal"><h2>Selected analyses</h2><span class="section-note">reproducible · public data</span></div>
-  <p class="section-intro reveal">Two finished analyses using public data — code, data-source documentation, and rendered reports on GitHub. A published-paper replication project is next.</p>
+  <p class="section-intro reveal">Three finished analyses on public data — code, data-source documentation, and a rendered report for each, on GitHub.</p>
 
   <article class="project reveal">
-    <div class="project-meta">R · Spatial / survey data</div>
-    <h3>Mapping Capital Flows in the DC Region</h3>
-    <p class="q">Is capital investment distributed evenly across the Washington DC region, or does it track demographic lines?</p>
-    <p class="desc">Built an R/Quarto pipeline over Urban Institute capital-flows data to test whether county population predicts poverty rates, and how investment per household varies across racial demographic groups in the DC metro area.</p>
-    <p class="finding">Finding: larger, more urbanized counties tend to show lower poverty rates, though population size alone explains little of the variation — investment per household differs meaningfully by demographic group.</p>
+    <div class="project-meta">R · Census microdata · Quarto</div>
+    <h3>The U.S. Gender Pay Gap: How Much Survives Controls?</h3>
+    <p class="q">How much of the raw gender wage gap is explained by measurable differences in workers and their jobs, and how much is left unexplained?</p>
+    <p class="desc">Pulled 2022 ACS microdata (~679,000 prime-age full-time workers) with tidycensus, fit wage regressions adding controls in tiers with heteroskedasticity-robust standard errors, and ran an Oaxaca-Blinder decomposition — with a limitations section on what a population-level residual can and cannot show.</p>
+    <p class="finding">Finding: the raw 14.3% hourly gap widens to 20.0% once education and experience are held constant (prime-age women are the more educated group), and the decomposition leaves essentially the whole gap unexplained by measured characteristics.</p>
     <div class="project-foot">
-      <span>Data: Urban Data Catalog (2023)</span>
-      <span>Stack: tidyverse · sf · tigris</span>
-      <a href="https://github.com/sys9317/dc-capital-flows-analysis">Repository →</a>
+      <span>Data: US Census ACS 2022 PUMS</span>
+      <span>Stack: tidyverse · tidycensus · sandwich / lmtest</span>
+      <a href="https://sys9317.github.io/pay-equity-wage-gap/">Rendered report →</a>
+      <a href="https://github.com/sys9317/pay-equity-wage-gap">Repository →</a>
     </div>
   </article>
 
@@ -176,7 +177,22 @@
     <div class="project-foot">
       <span>Data: Chicago PD · US Census ACS</span>
       <span>Stack: sf · tidycensus</span>
+      <a href="https://sys9317.github.io/chicago-homicide-analysis/">Rendered report →</a>
       <a href="https://github.com/sys9317/chicago-homicide-analysis">Repository →</a>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <div class="project-meta">R · Spatial / survey data</div>
+    <h3>Mapping Capital Flows in the DC Region</h3>
+    <p class="q">Is capital investment distributed evenly across the Washington DC region, or does it track demographic lines?</p>
+    <p class="desc">Built an R/Quarto pipeline over Urban Institute capital-flows data to test whether county population predicts poverty rates, and how investment per household varies across racial demographic groups in the DC metro area.</p>
+    <p class="finding">Finding: larger, more urbanized counties tend to show lower poverty rates, though population size alone explains little of the variation — investment per household differs meaningfully by demographic group.</p>
+    <div class="project-foot">
+      <span>Data: Urban Data Catalog (2023)</span>
+      <span>Stack: tidyverse · sf · tigris</span>
+      <a href="https://sys9317.github.io/dc-capital-flows-analysis/">Rendered report →</a>
+      <a href="https://github.com/sys9317/dc-capital-flows-analysis">Repository →</a>
     </div>
   </article>
 
