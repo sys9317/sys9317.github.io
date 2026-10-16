@@ -3,250 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yosup Shin — Quantitative Policy Analyst</title>
-<meta name="description" content="Yosup Shin — MIDP, Georgetown McCourt. Applied econometrics, impact evaluation, and reproducible data work.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Yosup Shin</title>
+<meta name="description" content="Yosup Shin, MIDP Georgetown McCourt. Quantitative policy researcher working with administrative, survey, and conflict data.">
 <style>
-  :root{
-    --ink:#121212;
-    --ink-soft:#4B4B4B;
-    --paper:#FFFFFF;
-    --paper-soft:#F5F6F8;
-    --line:#DCDCDC;
-    --accent:#1F4E8C;
-    --accent-deep:#153A6B;
-    --accent-soft:rgba(31,78,140,0.08);
-    --font-display:'Source Serif 4', serif;
-    --font-body:'Source Sans 3', -apple-system, sans-serif;
-    --font-mono:'IBM Plex Mono', monospace;
-    --maxw:880px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:16.5px; line-height:1.65; -webkit-font-smoothing:antialiased;}
-  a{color:var(--accent);}
-  a:hover{color:var(--accent-deep);}
-  :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
-  .band{background:var(--paper-soft);}
+  :root{ color-scheme:light; --ink:#161616; --soft:#6b6b6b; --line:#ebebeb; --accent:#1F4E8C; --bg:#fff; }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 20px;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
 
-  nav{position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
-  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:56px;}
-  .nav-name{font-family:var(--font-mono); font-size:13.5px; letter-spacing:0.02em; color:var(--ink); text-decoration:none; font-weight:600;}
-  .nav-links{display:flex; gap:24px; align-items:center; list-style:none; margin:0; padding:0;}
-  .nav-links a{font-family:var(--font-mono); font-size:13px; color:var(--ink-soft); text-decoration:none; font-weight:500;}
-  .nav-links a:hover{color:var(--accent);}
-  .nav-links a.cv{background:var(--accent); color:#fff; padding:6px 14px; border-radius:3px;}
-  .nav-links a.cv:hover{background:var(--accent-deep); color:#fff;}
+  header{padding:64px 0 48px;}
+  .intro{display:flex; gap:28px; align-items:center;}
+  .photo{width:150px; height:150px; border-radius:50%; object-fit:cover; flex:0 0 150px;}
+  h1{font-size:30px; margin:0 0 4px; font-weight:600; letter-spacing:-0.01em;}
+  .tagline{color:var(--soft); margin:0 0 16px; font-size:15px;}
+  .bio{margin:0 0 16px; font-size:15.5px;}
+  .links{font-size:14.5px;}
+  .links a{margin-right:14px;}
 
-  section{padding:64px 0;}
+  section{padding:28px 0; border-top:1px solid var(--line);}
+  h2{font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); margin:0 0 16px; font-weight:600;}
+  .row{display:flex; justify-content:space-between; gap:16px; padding:8px 0; font-size:15px;}
+  .row .where{font-weight:500; display:block;}
+  .row .when{color:var(--soft); white-space:nowrap; font-size:14px;}
+  .row .what{color:var(--soft); font-size:14px; display:block;}
+  .list p{margin:0 0 8px; font-size:15px;}
 
-  .hero{padding-top:60px; padding-bottom:40px;}
-  .eyebrow{font-family:var(--font-mono); font-size:13px; font-weight:500; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:20px;}
-  h1{font-family:var(--font-display); font-weight:600; font-size:48px; line-height:1.15; margin:0 0 6px; letter-spacing:-0.01em; color:var(--ink);}
-  h1 .role{display:block; font-weight:400; font-style:italic; font-size:23px; color:var(--accent); margin-top:10px;}
-  .lede{font-size:18px; color:var(--ink-soft); max-width:580px; margin:24px 0 28px;}
-  .stat-line{font-family:var(--font-mono); font-size:13.5px; color:var(--ink-soft); background:var(--paper-soft); border:1px solid var(--line); border-radius:4px; padding:14px 18px; margin-bottom:32px; max-width:620px;}
-  .stat-line b{color:var(--ink); font-weight:600;}
-  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
-  .btn{font-family:var(--font-mono); font-size:13.5px; font-weight:500; text-decoration:none; padding:12px 22px; border-radius:4px; display:inline-block;}
-  .btn-solid{background:var(--accent); color:#fff;}
-  .btn-solid:hover{background:var(--accent-deep); color:#fff;}
-  .btn-outline{color:var(--ink); border:1px solid var(--line); background:#fff;}
-  .btn-outline:hover{border-color:var(--ink);}
+  footer{padding:24px 0 48px; border-top:1px solid var(--line); color:var(--soft); font-size:13.5px;}
+  footer a{color:var(--soft);}
 
-  .section-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:8px;}
-  .section-head h2{font-family:var(--font-display); font-size:27px; font-weight:600; margin:0; letter-spacing:-0.01em; color:var(--ink);}
-  .section-note{font-family:var(--font-mono); font-size:12px; font-weight:500; color:var(--accent); background:var(--accent-soft); padding:4px 10px; border-radius:12px;}
-  .section-intro{color:var(--ink-soft); max-width:600px; margin:0 0 32px; font-size:15.5px;}
-
-  .toolkit{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
-  .toolkit-group h3{font-family:var(--font-mono); font-size:12px; text-transform:uppercase; font-weight:600; letter-spacing:0.08em; color:var(--ink-soft); margin:0 0 12px;}
-  .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
-  .tag-row span{font-family:var(--font-mono); font-size:13px; color:var(--ink); background:#fff; border:1px solid var(--line); padding:6px 12px; border-radius:4px;}
-
-  .project{background:#fff; border:1px solid var(--line); border-radius:6px; padding:30px; margin-bottom:20px;}
-  .project-meta{font-family:var(--font-mono); font-size:11.5px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px;}
-  .project h3{font-family:var(--font-display); font-size:22px; margin:0 0 8px; font-weight:600; color:var(--ink);}
-  .project .q{font-family:var(--font-display); font-style:italic; font-weight:400; color:var(--ink-soft); margin:0 0 14px; font-size:16px;}
-  .project p.desc{margin:0 0 14px; color:var(--ink-soft); font-size:15px; max-width:640px;}
-  .project .finding{font-size:14.5px; color:var(--ink); margin:0 0 18px; max-width:640px; padding:12px 16px; background:var(--accent-soft); border-left:3px solid var(--accent); border-radius:0 4px 4px 0;}
-  .project-foot{display:flex; gap:20px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:16px;}
-  .project-foot a{color:var(--accent); font-weight:500;}
-  .more-repos{font-family:var(--font-mono); font-size:13.5px; margin-top:8px; color:var(--ink-soft);}
-  .more-repos a{color:var(--accent); font-weight:500;}
-
-  .about-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:48px;}
-  .about-grid p{margin:0 0 16px; color:var(--ink-soft); font-size:15.5px; max-width:520px;}
-  .side-block{background:#fff; border:1px solid var(--line); border-radius:6px; padding:18px 20px; margin-bottom:20px;}
-  .side-block h3{font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; font-weight:600; letter-spacing:0.08em; color:var(--accent); margin:0 0 12px;}
-  .side-block .item{display:flex; justify-content:space-between; font-size:14px; padding:7px 0; border-bottom:1px solid var(--line);}
-  .side-block .item:last-child{border-bottom:none;}
-  .side-block .item span:last-child{font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft);}
-
-  footer{background:#111111; color:#EDEDED; padding:56px 0 36px; margin-top:20px;}
-  footer h2{font-family:var(--font-display); color:#fff; font-size:27px; margin:0 0 8px; font-weight:600;}
-  footer .lede{color:#B8B8B8; max-width:480px;}
-  .contact-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:28px;}
-  .contact-grid .item span{display:block; color:#8A8A8A; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px; font-family:var(--font-mono);}
-  .contact-grid a{font-family:var(--font-mono); font-size:13.5px; color:#fff; text-decoration:none; border-bottom:1px solid #4A6FA5;}
-  .contact-grid a:hover{color:#5B9BEE; border-color:#5B9BEE;}
-  footer .copyright{margin-top:40px; font-family:var(--font-mono); font-size:11px; color:#6A6A6A;}
-
-  .reveal{opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease;}
-  .reveal.in{opacity:1; transform:none;}
-  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
-
-  @media (max-width:760px){
-    h1{font-size:36px;} h1 .role{font-size:19px;}
-    .toolkit{grid-template-columns:1fr;}
-    .about-grid{grid-template-columns:1fr;}
-    .contact-grid{grid-template-columns:1fr 1fr;}
-    .nav-links{gap:12px;} .nav-links a{font-size:11.5px;}
-    .nav-links a.cv{padding:5px 10px;}
-    .project{padding:22px;}
+  @media (max-width:560px){
+    .intro{flex-direction:column; text-align:center;}
+    .photo{width:128px; height:128px; flex-basis:auto;}
+    .links{text-align:center;}
+    .links a{display:inline-block; margin:4px 8px;}
+    .row{flex-direction:column; gap:2px;}
+    .row .when{white-space:normal;}
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <a href="#top" class="nav-name">Y. SHIN</a>
-    <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a class="cv" href="resume.pdf">CV ↓</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header id="top" class="hero wrap">
-  <div class="eyebrow">Washington, DC · Open to quantitative research &amp; policy roles</div>
-  <h1>Yosup Shin<span class="role">Quantitative Policy Analyst</span></h1>
-  <p class="lede">I turn household surveys, panel data, and public economic datasets into evidence — in Stata, R, and Python. MIDP, Georgetown McCourt (2026).</p>
-  <div class="stat-line"><b>8,200+</b> household surveys analyzed &nbsp;·&nbsp; <b>1,000+</b> RCT participants tracked &nbsp;·&nbsp; fieldwork across <b>3</b> countries</div>
-  <div class="cta-row">
-    <a class="btn btn-solid" href="#projects">View my analyses</a>
-    <a class="btn btn-outline" href="resume.pdf">Full CV (PDF) →</a>
+<header class="wrap">
+  <div class="intro">
+    <img class="photo" src="photo.png" alt="Yosup Shin">
+    <div>
+      <h1>Yosup Shin</h1>
+      <p class="tagline">Quantitative policy researcher · Washington, DC</p>
+      <p class="bio">I'm interested in who gets left out when programs, markets, and aid reach people. I like testing those questions with data that was never built for research: administrative records, GPS traces, household surveys. Lately most of my time goes to humanitarian need in eastern DRC and to how low-income workers in Kenya adopt new technology.</p>
+      <div class="links">
+        <a href="mailto:shinys9317@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/yosupshin0426">LinkedIn</a>
+        <a href="https://github.com/sys9317">GitHub</a>
+        <a href="resume.pdf">CV</a>
+      </div>
+    </div>
   </div>
 </header>
 
-<section class="band">
-  <div class="wrap">
-    <div class="toolkit reveal">
-      <div class="toolkit-group">
-        <h3>Tools</h3>
-        <div class="tag-row"><span>Stata</span><span>R</span><span>Python</span><span>SQL</span><span>Git</span><span>SurveyCTO</span></div>
-      </div>
-      <div class="toolkit-group">
-        <h3>Methods</h3>
-        <div class="tag-row"><span>RCT design</span><span>Impact evaluation</span><span>Panel data</span><span>Causal inference</span></div>
-      </div>
+<main class="wrap">
+
+  <section>
+    <h2>Experience</h2>
+    <div class="row">
+      <div><span class="where"><a href="https://oye.ke/">Oye Kenya</a></span><span class="what">Research Assistant · Nairobi</span></div>
+      <div class="when">2025</div>
     </div>
-  </div>
-</section>
-
-<section id="projects" class="wrap">
-  <div class="section-head reveal"><h2>Selected analyses</h2><span class="section-note">reproducible · public data</span></div>
-  <p class="section-intro reveal">Three finished analyses on public data — code, data-source documentation, and a rendered report for each, on GitHub.</p>
-
-  <article class="project reveal">
-    <div class="project-meta">R · Census microdata · Quarto</div>
-    <h3>The U.S. Gender Pay Gap: How Much Survives Controls?</h3>
-    <p class="q">How much of the raw gender wage gap is explained by measurable differences in workers and their jobs, and how much is left unexplained?</p>
-    <p class="desc">Pulled 2022 ACS microdata (~679,000 prime-age full-time workers) with tidycensus, fit wage regressions adding controls in tiers with heteroskedasticity-robust standard errors, and ran an Oaxaca-Blinder decomposition — with a limitations section on what a population-level residual can and cannot show.</p>
-    <p class="finding">Finding: the raw 14.3% hourly gap widens to 20.0% once education and experience are held constant (prime-age women are the more educated group), and the decomposition leaves essentially the whole gap unexplained by measured characteristics.</p>
-    <div class="project-foot">
-      <span>Data: US Census ACS 2022 PUMS</span>
-      <span>Stack: tidyverse · tidycensus · sandwich / lmtest</span>
-      <a href="https://sys9317.github.io/pay-equity-wage-gap/">Rendered report →</a>
-      <a href="https://github.com/sys9317/pay-equity-wage-gap">Repository →</a>
+    <div class="row">
+      <div><span class="where"><a href="https://www.worldbank.org">The World Bank</a></span><span class="what">Intern · Washington, DC</span></div>
+      <div class="when">2025–2026</div>
     </div>
-  </article>
-
-  <article class="project reveal">
-    <div class="project-meta">R · Geospatial / Census API</div>
-    <h3>Chicago Homicide Geography</h3>
-    <p class="q">Where do homicides concentrate in Chicago, and does the arrest rate hold steady across neighborhoods?</p>
-    <p class="desc">Joined 8M+ Chicago Police Department incident records with census tract boundaries and ACS data to map homicide concentration, its relationship to income, and preliminary arrest-rate variation by neighborhood.</p>
-    <p class="finding">Finding: homicides cluster heavily on the South and West Sides; tract-level income correlates negatively with homicide rates; arrest-rate variation across neighborhoods needs further work.</p>
-    <div class="project-foot">
-      <span>Data: Chicago PD · US Census ACS</span>
-      <span>Stack: sf · tidycensus</span>
-      <a href="https://sys9317.github.io/chicago-homicide-analysis/">Rendered report →</a>
-      <a href="https://github.com/sys9317/chicago-homicide-analysis">Repository →</a>
+    <div class="row">
+      <div><span class="where"><a href="https://www.impact-initiatives.org">IMPACT Initiatives</a></span><span class="what">Graduate Consultant · Washington, DC</span></div>
+      <div class="when">2025–2026</div>
     </div>
-  </article>
-
-  <article class="project reveal">
-    <div class="project-meta">R · Spatial / survey data</div>
-    <h3>Mapping Capital Flows in the DC Region</h3>
-    <p class="q">Is capital investment distributed evenly across the Washington DC region, or does it track demographic lines?</p>
-    <p class="desc">Built an R/Quarto pipeline over Urban Institute capital-flows data to test whether county population predicts poverty rates, and how investment per household varies across racial demographic groups in the DC metro area.</p>
-    <p class="finding">Finding: larger, more urbanized counties tend to show lower poverty rates, though population size alone explains little of the variation — investment per household differs meaningfully by demographic group.</p>
-    <div class="project-foot">
-      <span>Data: Urban Data Catalog (2023)</span>
-      <span>Stack: tidyverse · sf · tigris</span>
-      <a href="https://sys9317.github.io/dc-capital-flows-analysis/">Rendered report →</a>
-      <a href="https://github.com/sys9317/dc-capital-flows-analysis">Repository →</a>
+    <div class="row">
+      <div><span class="where">Leiden University</span><span class="what">Research Assistant · The Hague</span></div>
+      <div class="when">2023–2024</div>
     </div>
-  </article>
+  </section>
 
-  <p class="more-repos reveal">More repositories (data processing, coursework) → <a href="https://github.com/sys9317">github.com/sys9317</a></p>
-</section>
-
-<section id="about" class="band">
-  <div class="wrap">
-    <div class="section-head reveal"><h2>About</h2></div>
-    <div class="about-grid reveal">
-      <div>
-        <p>I'm a Korean national based in Washington, DC, finishing my Master's in International Development Policy at Georgetown McCourt. Before that, I studied International Relations at Leiden University in the Netherlands, and grew up partly in Belgium.</p>
-        <p>I get genuinely curious about why things work the way they do — why smallholder farmers don't adopt cleaner technology even when the economics make sense, or why humanitarian funding doesn't always reach the communities that need it most.</p>
-        <p>Outside of work, I follow developments in AI policy, global food security, and U.S.-Asia economic relations closely.</p>
-      </div>
-      <div>
-        <div class="side-block">
-          <h3>Education</h3>
-          <div class="item"><span>Georgetown McCourt</span><span>MA IDP, 2026</span></div>
-          <div class="item"><span>Leiden University</span><span>BSc IR (Hons), 2024</span></div>
-        </div>
-        <div class="side-block">
-          <h3>Languages</h3>
-          <div class="item"><span>Korean</span><span>Native</span></div>
-          <div class="item"><span>English</span><span>Fluent</span></div>
-          <div class="item"><span>French</span><span>Elementary</span></div>
-        </div>
-      </div>
+  <section>
+    <h2>Education</h2>
+    <div class="row">
+      <div><span class="where">Georgetown University, McCourt School of Public Policy</span><span class="what">Master of International Development Policy</span></div>
+      <div class="when">2026</div>
     </div>
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="wrap">
-    <h2>Get in touch</h2>
-    <p class="lede">Open to roles in quantitative research, impact evaluation, and policy analysis — in Washington DC and internationally.</p>
-    <div class="contact-grid">
-      <div class="item"><span>Email</span><a href="mailto:shinys9317@gmail.com">shinys9317@gmail.com</a></div>
-      <div class="item"><span>LinkedIn</span><a href="https://linkedin.com/in/yosupshin0426">yosupshin0426</a></div>
-      <div class="item"><span>GitHub</span><a href="https://github.com/sys9317">sys9317</a></div>
-      <div class="item"><span>CV</span><a href="resume.pdf">resume.pdf</a></div>
+    <div class="row">
+      <div><span class="where">Leiden University</span><span class="what">BSc, International Relations and Organisations</span></div>
+      <div class="when">2024</div>
     </div>
-    <div class="copyright">© 2026 Yosup Shin</div>
-  </div>
+  </section>
+
+  <section>
+    <h2>Tools &amp; Languages</h2>
+    <div class="list">
+      <p>Stata · R · Python · SQL · Git</p>
+      <p>Korean (native) · English (fluent) · French (beginner)</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <a href="mailto:shinys9317@gmail.com">shinys9317@gmail.com</a> · © 2026 Yosup Shin
 </footer>
 
-<script>
-  const els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    els.forEach(el => io.observe(el));
-  } else { els.forEach(el => el.classList.add('in')); }
-</script>
 </body>
 </html>
